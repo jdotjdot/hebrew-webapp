@@ -1,14 +1,14 @@
 __author__ = 'JJ'
 
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 from hebrew import *
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Hello, world!"
+    return render_template('index.html')
 
 @app.route('/encode', methods=["GET", "POST"])
 def encode():
