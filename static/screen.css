@@ -1,53 +1,97 @@
 html, body {
   height: 100%;
+  width: 100%;
   font-family: Helvetica, Arial, sans-serif;
-}
-.wrap {
-  height: 100%;
-  display: table;
-  margin: 0 auto;
-  width: 400px;
-}
-
-.wrap>div {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 input[type=text] {
-  width: 100%;
-  padding: 10px;
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 50%;
+  bottom: 0;
+  text-align: center;
+  font-size: 2em;
   outline: none;
-  border: 1px solid #9A9A9A;
-  border-radius: 5px;
-  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition: all 100ms ease-in-out;
+  background-image: url(/static/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center calc(100% + 300px);
 }
 
 input[type=text]:focus {
-  -moz-box-shadow:    0px 0px 2px 0px rgba(0,0,0,0.50);
-  box-shadow:         0px 0px 2px 0px rgba(0,0,0,0.50);
+  /*border-width: 5px;*/
+  font-size: 3.5em;
+  background-position: center -100%;
+  background-position: center calc(100% - 30px);
+  /*text-decoration: underline;*/
+  /*font-weight: bold;*/
 }
 
-.text-output {
-  padding: 15px 0;
-  min-height: 1em;
-  line-height: 1;
-  font-size: 1.5em;
+#input {
+  left: 0;
+  right: 50%;
+  background-color: #A7DBD8;
 }
 
-.hebrew {
-  text-align: right;
+#output {
+  left: 50%;
+  right: 0;
+  background-color: #F38630;
+}
+
+.wrap {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 h1 {
-  margin-left: -100px;
-  margin-right: -100px;
+  padding: 15px;
+  max-width: 500px;
   text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 1em;
+  background-color: #eee;
+  border-radius: 5px;
+  background-color: #eee;
+  margin: 0 auto;
 }
 
-p {
-  margin-bottom: 1.5em;
-  line-height: 1.6;
+@media screen and (max-height: 700px) {
+  input[type=text] {
+    background-size: 100px;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  input[type=text] {
+    background-image: none;
+    font-size: 1em;
+  }
+  input[type=text]:focus {
+    font-size: 1.1em;
+  }
+  h1 {
+    display: none;
+  }
+
+  #input {
+    top: 0;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  #output {
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 }

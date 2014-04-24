@@ -16,10 +16,10 @@ $(function() {
         input: $('#input').val()
       },
       success: function(response) {
-        $('#output').text(response);
+        $('#output').val(response);
       },
       error: function(error) {
-        $('#output').text("");
+        $('#output').val("");
       }
     });
   });
