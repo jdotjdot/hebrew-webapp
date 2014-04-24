@@ -34,13 +34,17 @@ input[type=text]:focus {
 #a {
   left: 0;
   right: 50%;
-  background-color: #A7DBD8;
+  /*background-color: #A7DBD8;*/
+  background-color: black;
+  color: white;
 }
+
 
 #b {
   left: 50%;
   right: 0;
-  background-color: #F38630;
+  /*background-color: #F38630;*/
+  background-color: gray;
 }
 
 .wrap {
@@ -51,14 +55,44 @@ input[type=text]:focus {
   z-index: 100;
 }
 
+.inwrap {
+    position: relative;
+}
+
+/* TODO: make popup disappear and not be ugly*/
+.popup {
+    width: 80%;
+    height: 100px;
+    top: 25px;
+    z-index: 200;
+    background-color: red;
+    padding-top: 25px;
+    position: relative;
+    margin: 0 auto;
+    font-size: .7em;
+    border-radius: 5px;
+    display: table-cell;
+}
+
+h1:hover {
+    background-color: darkgray;
+    transition: background-color 100ms ease-in-out;
+}
+
+h1:hover .popup {
+    visibility: visible;
+}
+
 h1 {
   padding: 15px;
   max-width: 500px;
+  max-height: 37px;
   text-align: center;
   background-color: #eee;
   border-radius: 5px;
   background-color: #eee;
   margin: 0 auto;
+  transition: background-color 100ms ease-in-out;
 }
 
 @media screen and (max-height: 700px) {
@@ -95,4 +129,9 @@ h1 {
     right: 0;
     width: 100%;
   }
+}
+
+/*TODO: highlight links better*/
+a {
+
 }

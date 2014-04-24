@@ -52,6 +52,19 @@ function isMobileSafari() {
     return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
 }
 
+function reverseChunks(l, n) {
+    var out = [];
+    for (var i = l.length; i > 0; i -= n) {
+        out.unshift(l.slice(i - n < 1 ? 0 : i - n, i));
+    }
+
+    return out;
+}
+
+function prettifyNumbers(number) {
+    return reverseChunks(number, 3).join(',');
+}
+
 // Hebrew handling
 (function () {
 
@@ -61,9 +74,13 @@ function isMobileSafari() {
     var updateItem = function(hebrew, item) {
         var url = hebrew ? '/decode' : '/encode';
 
-        loadXMLDoc(url, item.value,
+        loadXMLDoc(url, item.value.replace(/,/g, ''),
             function(response) {
-                otherItem(item).value = response;
+                if (hebrew) {
+                    otherItem(item).value = prettifyNumbers(response);
+                } else {
+                    otherItem(item).value = response;
+                }
             },
             function(response) {
                 otherItem(item).value = "";
@@ -78,8 +95,12 @@ function isMobileSafari() {
     var event = 'input';
 
     var handler = function(e) {
-        var hebrew = isNaN(+e.srcElement.value);
-        updateItem(hebrew, e.srcElement);
+        var item = e.srcElement;
+        var hebrew = isNaN(+item.value.replace(/,/g, ''));
+        if (!hebrew) {
+            item.value = prettifyNumbers(item.value.replace(/,/g, ''))
+        }
+        updateItem(hebrew, item);
     };
 
     //add event handlers
@@ -107,5 +128,3 @@ function isMobileSafari() {
 
 })();
 
-
-//TODO: pretty thousands
