@@ -67,8 +67,9 @@ h1 {
   }
 }
 
-@media screen and (max-height: 400px) {
-  input[type=text] {
+/*@media screen and (max-height: 400px) {*/
+@media only screen and (min-device-width: 480px) {
+    input[type=text] {
     background-image: none;
     font-size: 1em;
   }
