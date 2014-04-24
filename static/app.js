@@ -106,3 +106,6 @@ function isMobileSafari() {
     addListeners(['focus', 'click'], handler, [a, b]);
 
 })();
+
+
+//TODO: pretty thousands
