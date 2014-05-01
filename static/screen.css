@@ -1,7 +1,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 input[type=text] {
@@ -35,7 +35,7 @@ input[type=text]:focus {
   left: 0;
   right: 50%;
   /*background-color: #A7DBD8;*/
-  background-color: black;
+  background-color: #243743;
   color: white;
 }
 
@@ -44,7 +44,7 @@ input[type=text]:focus {
   left: 50%;
   right: 0;
   /*background-color: #F38630;*/
-  background-color: gray;
+  background-color: #8A949B;
 }
 
 .wrap {
@@ -59,19 +59,43 @@ input[type=text]:focus {
     position: relative;
 }
 
+
 /* TODO: make popup disappear and not be ugly*/
 .popup {
     width: 80%;
     height: 100px;
     top: 25px;
     z-index: 200;
-    background-color: red;
-    padding-top: 25px;
+    background-color: darkgray;
+    padding-top: 12px;
     position: relative;
     margin: 0 auto;
     font-size: .7em;
-    border-radius: 5px;
+    border-radius: 10px;
     display: table-cell;
+    color: black;
+    display: none;
+}
+
+/* The second popup */
+.popup + .popup {
+    padding-top: 10px;
+    margin-top: 10px;
+    width: 80%;
+    font-size: .5em;
+    height: 70px;
+}
+
+.popup a {
+    color: black;
+    text-decoration: none;
+    transition: color 100ms ease-in-out;
+}
+
+.popup a:hover {
+    color: black;
+    text-shadow: 0 0 2px black;
+    transition: color 100ms ease-in-out, text-shadow 100ms ease-in-out;
 }
 
 h1:hover {
@@ -80,11 +104,13 @@ h1:hover {
 }
 
 h1:hover .popup {
-    visibility: visible;
+    display: block;
 }
 
+
+
 h1 {
-  padding: 15px;
+  padding: 5px 15px 15px 15px;
   max-width: 500px;
   max-height: 37px;
   text-align: center;
@@ -129,9 +155,4 @@ h1 {
     right: 0;
     width: 100%;
   }
-}
-
-/*TODO: highlight links better*/
-a {
-
 }

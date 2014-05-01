@@ -1,7 +1,8 @@
 <html>
   <head>
     <link rel="stylesheet" href="/static/screen.css">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <link href='http://fonts.googleapis.com/css?family=Lato|Open+Sans' rel='stylesheet' type='text/css'>
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     {# <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>--> #}
   </head>
   <body>
@@ -9,12 +10,19 @@
         <h1>Hebrew Number Converter
             <div class="inwrap">
                 <div class="popup">
-                    Made with <3 at <a href="http://www.hackerschool.com">Hacker School</a> by <a href="https://github.com/jdotjdot">@jdotjdot</a><br>
+                    Made with &#9829; at <a href="http://www.hackerschool.com">Hacker School</a> by <a href="https://github.com/jdotjdot">@jdotjdot</a><br>
                     Design by <a href="https://github.com/lord">@lord</a>
+                </div>
+                <div class="popup">
+                    API <br>
+                    <code>{{ request.url_root }}encode?input=&lt;number&gt;</code><br>
+                    <code>{{ request.url_root }}decode?input=&lt;hebrew&gt;</code>
                 </div>
             </div>
         </h1>
     </div>
+
+
 
     <input type="text" id="a">
     <input type="text" id="b">
