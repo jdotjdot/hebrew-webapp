@@ -62,7 +62,7 @@ def split_thousands(n, littleendian=True):
 	"""
 
 	# Ignore geresh on digit < 10, if present
-	if n[-1] == GERESH:
+	if n[-1] == GERESH or n[-1] == "'":
 		n = n[:-1]
 
 	ret =  n.replace(GERESH, "'").split("'")
