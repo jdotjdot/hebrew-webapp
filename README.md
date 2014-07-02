@@ -1,5 +1,6 @@
 Hebrew Number Converter
 ==========
+[![Build Status](https://travis-ci.org/jdotjdot/hebrew-webapp.svg?branch=master)](https://travis-ci.org/jdotjdot/hebrew-webapp)
 
 This is a webapp in Flask built on my Hebrew numeral conversion tool that I contributed to the [Sefaria][1] project.
 
