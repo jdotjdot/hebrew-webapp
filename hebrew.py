@@ -42,6 +42,11 @@ def heb_to_int(unicode_char):
 		# u"\u05F3": "'", # Hebrew geresh
 		# u"\u05F4": '"', # Hebrew gershayim
 		# u"'":	   "'",
+		u"\u05DA": 20, # khaf sofit
+		u"\u05DD": 40, # mem sofit
+		u"\u05DF": 50, # nun sofit
+		u"\u05E3": 80, # peh sofit
+		u"\u05E5": 90, # tzadi sofit
 	}
 
 	if unicode_char not in hebrew_numerals.keys():
