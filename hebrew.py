@@ -70,7 +70,10 @@ def split_thousands(n, littleendian=True):
 	if n[-1] == GERESH or n[-1] == "'":
 		n = n[:-1]
 
-	ret =  n.replace(GERESH, "'").split("'")
+	#assume that two single quotes in a row should be a double quote. '' -> "
+	n = n.replace(GERESH, "'").replace("''", "\"")
+
+	ret = n.split("'")
 	if littleendian:
 		return reversed(ret)
 	else:
