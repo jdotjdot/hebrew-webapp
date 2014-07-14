@@ -58,6 +58,11 @@ class TestSpecificInOutTests():
         assert u'טו׳' == e(15000)
         assert u'טז׳' == e(16000)
 
+
+    def test_punctuation(self):
+        assert d(u'י׳׳ג') == 13
+        assert d(u"י''ג") == 13
+
 def TestFunctionTests():
 
     def test_break_int_magnitudes(self):
